@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeadPilot - AI lead prioritization</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">LP</span> LeadPilot <small>AI lead copilot for real-estate sales</small></div>
+    <button class="btn primary" data-action="new-lead">+ New lead</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <button id="queue" class="queue" data-action="filter" data-filter="due" hidden></button>
+      <div class="filters" id="filters"></div>
+      <div id="list" class="list"></div>
+    </aside>
+    <main id="main" class="main"></main>
+  </div>
+
+  <div id="modal" class="modal" hidden>
+    <form id="lead-form" class="modal-card" autocomplete="off">
+      <div class="modal-head">
+        <h2>New lead</h2>
+        <select id="sample" title="Fill with a sample lead">
+          <option value="">Load a sample...</option>
+          <option value="0">Sample: ready buyer</option>
+          <option value="1">Sample: just browsing</option>
+          <option value="2">Sample: negotiating</option>
+        </select>
+      </div>
+      <div class="grid2">
+        <label>Name *<input name="name" required maxlength="120" /></label>
+        <label>Location<input name="location" maxlength="160" /></label>
+        <label>Property requirement *<input name="requirement" required maxlength="600" placeholder="e.g. 3BHK apartment near Avinashi Road" /></label>
+        <label>Budget<input name="budget" maxlength="120" placeholder="e.g. 85L - 95L" /></label>
+        <label>Buying timeline<input name="timeline" maxlength="120" placeholder="e.g. within 3 weeks" /></label>
+      </div>
+      <label>Customer message / chat transcript
+        <textarea name="message" rows="6" maxlength="6000" placeholder="Paste the inquiry or chat transcript..."></textarea>
+      </label>
+      <p id="form-error" class="error" hidden></p>
+      <div class="modal-actions">
+        <button type="button" class="btn" data-action="close-modal">Cancel</button>
+        <button type="submit" class="btn primary" id="analyze-btn">Analyze with AI</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/app.js"></script>
+</body>
+</html>
