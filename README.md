@@ -2,8 +2,8 @@
 
 Built for the Masal AI FDE assignment (Round 2).
 
-**Live app:** `<paste your Vercel URL here>`  
-**Demo video:** `<paste your Loom / unlisted YouTube link here>`
+**Live app:** `https://leadpilot-six-delta.vercel.app/`  
+**Demo video:** `https://www.loom.com/share/666ebd9f003a4b74867891c2390f832f`
 
 ## What I built
 
